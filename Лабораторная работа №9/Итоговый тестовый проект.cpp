@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 #include <IKeypad.h>
-#include<ILatch.h>
+#include <ILatch.h>
 #include <lockcontroller.h>
 using namespace testing;
 
