@@ -6,7 +6,6 @@
 #include <lockcontroller.h>
 using namespace testing;
 
-
 class MockIKeypad: public IKeypad
 {
 public:
@@ -23,7 +22,6 @@ public:
     MOCK_METHOD(DoorStatus, close,(),(override));
     MOCK_METHOD(DoorStatus,getDoorStatus,(),(override));
 };
-
 
 TEST(Tests, wait)
 {
@@ -68,8 +66,6 @@ TEST(Tests,unlock_Door)
             .Times(1);
     DoorStatus Return = contrl.unlockDoor();
     EXPECT_EQ(Return, DoorStatus::OPEN);
-
-
 }
 
 TEST(Tests, lock_Door)
@@ -98,6 +94,7 @@ TEST(Tests,hardWare_Check_OK)
     HardWareStatus Return = contrl.hardWareCheck();
     EXPECT_EQ(Return,HardWareStatus::OK);
 }
+
 TEST(Tests,hardWare_Check_ERROR)
 {
     MockIKeypad keypad;
@@ -172,7 +169,6 @@ TEST(Tests, reset_pass)
             .WillOnce(Return(newPass));
     bool Return = contrl.isCorrectPassword();
     EXPECT_TRUE(Return);
-
 }
 
 TEST(Tests, reset_pass2)
